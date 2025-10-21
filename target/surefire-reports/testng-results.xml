@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="2" failed="2" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-10-21T19:37:53 IST" name="PlaywrightSuite" finished-at="2025-10-21T19:38:33 IST" duration-ms="39812">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.framework.runners.TestRunner@4b29d1d2]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2025-10-21T19:37:53 IST" name="Cucumber Tests" finished-at="2025-10-21T19:38:33 IST" duration-ms="39812">
+      <class name="com.framework.runners.TestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.framework.runners.TestRunner@4b29d1d2]" started-at="2025-10-21T19:37:53 IST" name="setUpClass" finished-at="2025-10-21T19:37:54 IST" duration-ms="612" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@7dfb0c0f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.framework.runners.TestRunner@4b29d1d2]" started-at="2025-10-21T19:37:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-10-21T19:38:33 IST" duration-ms="38938" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify login functionality for valid credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Page OrangeHRM"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.framework.runners.TestRunner@4b29d1d2]" started-at="2025-10-21T19:37:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-10-21T19:38:33 IST" duration-ms="38644" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify login functionality for Invalid credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Page OrangeHRM"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.framework.runners.TestRunner@4b29d1d2]" started-at="2025-10-21T19:37:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-10-21T19:38:33 IST" duration-ms="38795" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify user not navigated to dashboard page if uses Invalid credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Page OrangeHRM"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+Dashboard page is not visible expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+Dashboard page is not visible expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at com.framework.utils.SoftAssertManager.assertAll(SoftAssertManager.java:103)
+at com.framework.stepdefinitions.Hooks.tearDown(Hooks.java:31)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.framework.runners.TestRunner@4b29d1d2]" started-at="2025-10-21T19:37:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-10-21T19:38:32 IST" duration-ms="38518" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify login functionality for Invalid credentials message"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Page OrangeHRM"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[The following asserts failed:
+Expected error message: Unable to login but found: Invalid credentials expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+Expected error message: Unable to login but found: Invalid credentials expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+at com.framework.utils.SoftAssertManager.assertAll(SoftAssertManager.java:103)
+at com.framework.stepdefinitions.Hooks.tearDown(Hooks.java:31)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.framework.runners.TestRunner@4b29d1d2]" started-at="2025-10-21T19:38:33 IST" name="tearDownClass" finished-at="2025-10-21T19:38:33 IST" duration-ms="173" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.framework.runners.TestRunner -->
+    </test> <!-- Cucumber Tests -->
+  </suite> <!-- PlaywrightSuite -->
+</testng-results>

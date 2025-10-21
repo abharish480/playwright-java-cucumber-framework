@@ -1,0 +1,183 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+  http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.framework</groupId>
+  <artifactId>Playwright_Java_Cucumber_TestNG_POM</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <dependencies>
+    <!-- Cucumber + TestNG -->
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>7.15.0</version>
+    </dependency>
+    <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-testng</artifactId>
+        <version>7.15.0</version>
+    </dependency>
+
+    <!-- Allure + Cucumber 7 JVM plugin -->
+    <dependency>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-cucumber7-jvm</artifactId>
+        <version>2.24.0</version>
+    </dependency>
+
+    <!-- Allure TestNG adapter -->
+    <dependency>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-testng</artifactId>
+        <version>2.24.0</version>
+    </dependency>
+
+    <!-- Playwright -->
+    <dependency>
+        <groupId>com.microsoft.playwright</groupId>
+        <artifactId>playwright</artifactId>
+        <version>1.55.0</version>
+    </dependency>
+
+    <!-- Logging -->
+    <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>2.0.9</version>
+    </dependency>
+    
+    <dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.30</version> <!-- Use latest -->
+    <scope>provided</scope>
+</dependency>
+
+</dependencies>
+<!--<properties>
+  <browser>chrome</browser>
+  <env>local</env>
+  <threads>1</threads>
+  <tags>@regression</tags>
+</properties>-->
+
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-resources-plugin</artifactId>
+      <version>3.3.1</version>
+      <executions>
+        <execution>
+          <id>copy-and-filter-testng</id>
+          <phase>generate-test-resources</phase>
+          <goals>
+            <goal>copy-resources</goal>
+          </goals>
+          <configuration>
+            <outputDirectory>${project.build.directory}</outputDirectory>
+            <resources>
+              <resource>
+                <directory>src/test/resources</directory>
+                <includes>
+                  <include>testng.xml</include>
+                </includes>
+                <filtering>false</filtering>
+              </resource>
+            </resources>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>3.1.2</version>
+      <configuration>
+        <suiteXmlFiles>
+          <suiteXmlFile>${project.build.directory}/testng.xml</suiteXmlFile>
+        </suiteXmlFiles>
+        <systemPropertyVariables>
+<!--          <threads>${threads}</threads>
+          <browser>${browser}</browser>
+          <env>${env}</env>
+          <dataproviderthreadcount>${threads}</dataproviderthreadcount>
+          <tags>${tags}</tags>-->
+        </systemPropertyVariables>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+<!--
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.1.2</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+          <systemPropertyVariables>
+            <threads>${threads}</threads>
+            <browser>${browser}</browser>
+            <env>${env}</env>
+            <tags>${tags}</tags>
+          </systemPropertyVariables>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>-->
+ <!-- <build>
+  <resources>
+    <resource>
+      <directory>src/test/resources</directory>
+      <filtering>true</filtering>
+    </resource>
+  </resources>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>3.1.2</version>
+      <configuration>
+        <suiteXmlFiles>
+          <suiteXmlFile>${project.build.directory}/filtered-testng.xml</suiteXmlFile>
+        </suiteXmlFiles>
+        <systemPropertyVariables>
+          <threads>${threads}</threads>
+        </systemPropertyVariables>
+      </configuration>
+    </plugin>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-resources-plugin</artifactId>
+      <version>3.3.1</version>
+      <executions>
+        <execution>
+          <id>copy-and-filter-testng</id>
+          <phase>generate-test-resources</phase>
+          <goals>
+            <goal>copy-resources</goal>
+          </goals>
+          <configuration>
+            <outputDirectory>${project.build.directory}</outputDirectory>
+            <resources>
+              <resource>
+                <directory>src/test/resources</directory>
+                <includes>
+                  <include>testng.xml</include>
+                </includes>
+                <filtering>true</filtering>
+              </resource>
+            </resources>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+</build>-->
+</project>

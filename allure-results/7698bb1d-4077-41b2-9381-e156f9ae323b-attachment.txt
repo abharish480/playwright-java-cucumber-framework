@@ -1,0 +1,2 @@
+The following asserts failed:
+	Dashboard page is not visible expected [true] but found [false]

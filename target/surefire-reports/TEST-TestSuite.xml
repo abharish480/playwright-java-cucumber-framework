@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="41.013" tests="4" errors="0" skipped="0" failures="2">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\aripiralaharish\Downloads\Playwright_Java_Cucumber_TestNG_POM\target\test-classes;C:\Users\aripiralaharish\Downloads\Playwright_Java_Cucumber_TestNG_POM\target\classes;C:\Users\aripiralaharish\.m2\repository\io\cucumber\cucumber-java\7.15.0\cucumber-java-7.15.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\cucumber-core\7.15.0\cucumber-core-7.15.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\cucumber-gherkin\7.15.0\cucumber-gherkin-7.15.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.15.0\cucumber-gherkin-messages-7.15.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\tag-expressions\6.0.0\tag-expressions-6.0.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\cucumber-expressions\17.0.1\cucumber-expressions-17.0.1.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\datatable\7.15.0\datatable-7.15.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\cucumber-plugin\7.15.0\cucumber-plugin-7.15.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\docstring\7.15.0\docstring-7.15.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\html-formatter\20.4.0\html-formatter-20.4.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\ci-environment\10.0.0\ci-environment-10.0.0.jar;C:\Users\aripiralaharish\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\cucumber-testng\7.15.0\cucumber-testng-7.15.0.jar;C:\Users\aripiralaharish\.m2\repository\org\testng\testng\7.8.0\testng-7.8.0.jar;C:\Users\aripiralaharish\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\aripiralaharish\.m2\repository\org\webjars\jquery\3.6.1\jquery-3.6.1.jar;C:\Users\aripiralaharish\.m2\repository\io\qameta\allure\allure-cucumber7-jvm\2.24.0\allure-cucumber7-jvm-2.24.0.jar;C:\Users\aripiralaharish\.m2\repository\io\qameta\allure\allure-java-commons\2.24.0\allure-java-commons-2.24.0.jar;C:\Users\aripiralaharish\.m2\repository\io\qameta\allure\allure-model\2.24.0\allure-model-2.24.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\aripiralaharish\.m2\repository\io\qameta\allure\allure-testng\2.24.0\allure-testng-2.24.0.jar;C:\Users\aripiralaharish\.m2\repository\io\qameta\allure\allure-test-filter\2.24.0\allure-test-filter-2.24.0.jar;C:\Users\aripiralaharish\.m2\repository\com\microsoft\playwright\playwright\1.55.0\playwright-1.55.0.jar;C:\Users\aripiralaharish\.m2\repository\com\google\code\gson\gson\2.12.1\gson-2.12.1.jar;C:\Users\aripiralaharish\.m2\repository\com\google\errorprone\error_prone_annotations\2.36.0\error_prone_annotations-2.36.0.jar;C:\Users\aripiralaharish\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\aripiralaharish\.m2\repository\com\microsoft\playwright\driver\1.55.0\driver-1.55.0.jar;C:\Users\aripiralaharish\.m2\repository\com\microsoft\playwright\driver-bundle\1.55.0\driver-bundle-1.55.0.jar;C:\Users\aripiralaharish\.m2\repository\org\slf4j\slf4j-simple\2.0.9\slf4j-simple-2.0.9.jar;C:\Users\aripiralaharish\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\aripiralaharish\.m2\repository\org\projectlombok\lombok\1.18.30\lombok-1.18.30.jar;"/>
+    <property name="java.vm.vendor" value="OpenLogic"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://openlogic.com/"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="dataproviderthreadcount" value="4"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\OpenLogic\jdk-21.0.4.7-hotspot\bin"/>
+    <property name="sun.java.command" value="C:\Users\aripiralaharish\AppData\Local\Temp\surefire16335602269934202539\surefirebooter-20251021193752282_3.jar C:\Users\aripiralaharish\AppData\Local\Temp\surefire16335602269934202539 2025-10-21T19-37-52_018-jvmRun1 surefire-20251021193752282_1tmp surefire_0-20251021193752282_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\aripiralaharish\Downloads\Playwright_Java_Cucumber_TestNG_POM\target\test-classes;C:\Users\aripiralaharish\Downloads\Playwright_Java_Cucumber_TestNG_POM\target\classes;C:\Users\aripiralaharish\.m2\repository\io\cucumber\cucumber-java\7.15.0\cucumber-java-7.15.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\cucumber-core\7.15.0\cucumber-core-7.15.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\cucumber-gherkin\7.15.0\cucumber-gherkin-7.15.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.15.0\cucumber-gherkin-messages-7.15.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\tag-expressions\6.0.0\tag-expressions-6.0.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\cucumber-expressions\17.0.1\cucumber-expressions-17.0.1.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\datatable\7.15.0\datatable-7.15.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\cucumber-plugin\7.15.0\cucumber-plugin-7.15.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\docstring\7.15.0\docstring-7.15.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\html-formatter\20.4.0\html-formatter-20.4.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\ci-environment\10.0.0\ci-environment-10.0.0.jar;C:\Users\aripiralaharish\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\cucumber-testng\7.15.0\cucumber-testng-7.15.0.jar;C:\Users\aripiralaharish\.m2\repository\org\testng\testng\7.8.0\testng-7.8.0.jar;C:\Users\aripiralaharish\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\aripiralaharish\.m2\repository\org\webjars\jquery\3.6.1\jquery-3.6.1.jar;C:\Users\aripiralaharish\.m2\repository\io\qameta\allure\allure-cucumber7-jvm\2.24.0\allure-cucumber7-jvm-2.24.0.jar;C:\Users\aripiralaharish\.m2\repository\io\qameta\allure\allure-java-commons\2.24.0\allure-java-commons-2.24.0.jar;C:\Users\aripiralaharish\.m2\repository\io\qameta\allure\allure-model\2.24.0\allure-model-2.24.0.jar;C:\Users\aripiralaharish\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\aripiralaharish\.m2\repository\io\qameta\allure\allure-testng\2.24.0\allure-testng-2.24.0.jar;C:\Users\aripiralaharish\.m2\repository\io\qameta\allure\allure-test-filter\2.24.0\allure-test-filter-2.24.0.jar;C:\Users\aripiralaharish\.m2\repository\com\microsoft\playwright\playwright\1.55.0\playwright-1.55.0.jar;C:\Users\aripiralaharish\.m2\repository\com\google\code\gson\gson\2.12.1\gson-2.12.1.jar;C:\Users\aripiralaharish\.m2\repository\com\google\errorprone\error_prone_annotations\2.36.0\error_prone_annotations-2.36.0.jar;C:\Users\aripiralaharish\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\aripiralaharish\.m2\repository\com\microsoft\playwright\driver\1.55.0\driver-1.55.0.jar;C:\Users\aripiralaharish\.m2\repository\com\microsoft\playwright\driver-bundle\1.55.0\driver-bundle-1.55.0.jar;C:\Users\aripiralaharish\.m2\repository\org\slf4j\slf4j-simple\2.0.9\slf4j-simple-2.0.9.jar;C:\Users\aripiralaharish\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\aripiralaharish\.m2\repository\org\projectlombok\lombok\1.18.30\lombok-1.18.30.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\aripiralaharish"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-07-16"/>
+    <property name="java.home" value="C:\Program Files\OpenLogic\jdk-21.0.4.7-hotspot"/>
+    <property name="tags" value="@smoke"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\aripiralaharish\Downloads\Playwright_Java_Cucumber_TestNG_POM"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\aripiralaharish\AppData\Local\Temp\surefire16335602269934202539\surefirebooter-20251021193752282_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.4+7-adhoc.Administrator.jdk21u"/>
+    <property name="user.name" value="aripiralaharish"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="browser" value="chrome"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="OpenLogic-OpenJDK"/>
+    <property name="localRepository" value="C:\Users\aripiralaharish\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://techsupport.roguewave.com/"/>
+    <property name="java.io.tmpdir" value="C:\Users\ARIPIR~1\AppData\Local\Temp\"/>
+    <property name="java.version" value="21.0.4"/>
+    <property name="cucumber.filter.tags" value="@smoke"/>
+    <property name="user.dir" value="C:\Users\aripiralaharish\Downloads\Playwright_Java_Cucumber_TestNG_POM"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="threads" value="4"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="env" value="Preprod"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\OpenLogic\jdk-21.0.4.7-hotspot\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\aripiralaharish\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\aripiralaharish\bin;C:\Program Files\OpenLogic\jdk-21.0.4.7-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\dotnet;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Users\aripiralaharish\AppData\Local\Microsoft\WindowsApps;C:\Users\aripiralaharish\AppData\Local\JetBrains\IntelliJ IDEA 2024.3.1\bin;C:\Users\aripiralaharish\AppData\Local\Microsoft\WinGet\Packages\Schniz.fnm_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\aripiralaharish\Downloads\allure-2.35.1\bin;C:\Maven\bin;C:\Users\aripiralaharish\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;C:\Users\aripiralaharish\Downloads\apache-maven-3.9.11\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="OpenLogic"/>
+    <property name="java.vm.version" value="21.0.4+7-adhoc.Administrator.jdk21u"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="runScenario[&quot;Verify login functionality for Invalid credentials message&quot;, &quot;Login Page OrangeHRM&quot;](1)" classname="com.framework.runners.TestRunner" time="38.523">
+    <failure message="The following asserts failed:&#10;	Expected error message: Unable to login but found: Invalid credentials expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+The following asserts failed:
+	Expected error message: Unable to login but found: Invalid credentials expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at com.framework.utils.SoftAssertManager.assertAll(SoftAssertManager.java:103)
+	at com.framework.stepdefinitions.Hooks.tearDown(Hooks.java:31)
+]]></failure>
+    <system-out><![CDATA[>>> Running with tags: @smoke
+>>> Threads: 4
+>>> Browser: chrome
+>>> Env: Preprod
+
+@smoke
+Scenario: Verify login functionality for Invalid credentials message # src/test/resources/features/login.feature:16
+
+@smoke
+Scenario: Verify user not navigated to dashboard page if uses Invalid credentials # src/test/resources/features/login.feature:22
+
+@smoke
+Scenario: Verify login functionality for Invalid credentials       # src/test/resources/features/login.feature:10
+
+@smoke
+Scenario: Verify login functionality for valid credentials            # src/test/resources/features/login.feature:4
+Running in : >> chrome
+Running in : >> chrome
+Running in : >> chrome
+Running in : >> chrome
+Thread ID: 35
+Launching the application.............
+  Given User launches the application                                 # com.framework.stepdefinitions.LoginSteps.user_launches_the_application()
+Thread ID: 37
+Launching the application.............
+  Given User launches the application                                # com.framework.stepdefinitions.LoginSteps.user_launches_the_application()
+Thread ID: 38
+Launching the application.............
+  Given User launches the application                                             # com.framework.stepdefinitions.LoginSteps.user_launches_the_application()
+  When User login with username as "Admin" and password as "admin"   # com.framework.stepdefinitions.LoginSteps.user_login_with_username_and_password(java.lang.String,java.lang.String)
+Thread ID: 36
+Launching the application.............
+  Given User launches the application                              # com.framework.stepdefinitions.LoginSteps.user_launches_the_application()
+  When User login with username as "Admin" and password as "admin123" # com.framework.stepdefinitions.LoginSteps.user_login_with_username_and_password(java.lang.String,java.lang.String)
+  When User login with username as "Admin" and password as "Test"                 # com.framework.stepdefinitions.LoginSteps.user_login_with_username_and_password(java.lang.String,java.lang.String)
+  Then User should see "Unable to login" error message               # com.framework.stepdefinitions.LoginSteps.user_should_see_error_message(java.lang.String)
+
+    Embedding Verify login functionality for Invalid credentials message_20251021_193831 [image/png 62017 bytes]
+
+  When User login with username as "Admin" and password as "admin" # com.framework.stepdefinitions.LoginSteps.user_login_with_username_and_password(java.lang.String,java.lang.String)
+  Then User should see the dashboard                                              # com.framework.stepdefinitions.DashboardSteps.user_should_see_the_dashboard()
+  Then User should see "Invalid credentials" error message         # com.framework.stepdefinitions.LoginSteps.user_should_see_error_message(java.lang.String)
+
+    Embedding Verify user not navigated to dashboard page if uses Invalid credentials_20251021_193832 [image/png 62017 bytes]
+
+  Then User should see the dashboard                                  # com.framework.stepdefinitions.DashboardSteps.user_should_see_the_dashboard()
+      java.lang.AssertionError: The following asserts failed:
+	Expected error message: Unable to login but found: Invalid credentials expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at com.framework.utils.SoftAssertManager.assertAll(SoftAssertManager.java:103)
+	at com.framework.stepdefinitions.Hooks.tearDown(Hooks.java:31)
+
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Verify login functionality for Invalid credentials&quot;, &quot;Login Page OrangeHRM&quot;](2)" classname="com.framework.runners.TestRunner" time="38.638"/>
+  <testcase name="runScenario[&quot;Verify user not navigated to dashboard page if uses Invalid credentials&quot;, &quot;Login Page OrangeHRM&quot;](3)" classname="com.framework.runners.TestRunner" time="38.797">
+    <failure message="The following asserts failed:&#10;	Dashboard page is not visible expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
+The following asserts failed:
+	Dashboard page is not visible expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at com.framework.utils.SoftAssertManager.assertAll(SoftAssertManager.java:103)
+	at com.framework.stepdefinitions.Hooks.tearDown(Hooks.java:31)
+]]></failure>
+    <system-out><![CDATA[      java.lang.AssertionError: The following asserts failed:
+	Dashboard page is not visible expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at com.framework.utils.SoftAssertManager.assertAll(SoftAssertManager.java:103)
+	at com.framework.stepdefinitions.Hooks.tearDown(Hooks.java:31)
+
+]]></system-out>
+  </testcase>
+  <testcase name="runScenario[&quot;Verify login functionality for valid credentials&quot;, &quot;Login Page OrangeHRM&quot;](4)" classname="com.framework.runners.TestRunner" time="38.93"/>
+</testsuite>

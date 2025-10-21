@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 41.01 s <<< FAILURE! -- in TestSuite
+com.framework.runners.TestRunner.runScenario["Verify login functionality for Invalid credentials message", "Login Page OrangeHRM"](1) -- Time elapsed: 38.52 s <<< FAILURE!
+java.lang.AssertionError: 
+The following asserts failed:
+	Expected error message: Unable to login but found: Invalid credentials expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at com.framework.utils.SoftAssertManager.assertAll(SoftAssertManager.java:103)
+	at com.framework.stepdefinitions.Hooks.tearDown(Hooks.java:31)
+
+com.framework.runners.TestRunner.runScenario["Verify user not navigated to dashboard page if uses Invalid credentials", "Login Page OrangeHRM"](3) -- Time elapsed: 38.80 s <<< FAILURE!
+java.lang.AssertionError: 
+The following asserts failed:
+	Dashboard page is not visible expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at com.framework.utils.SoftAssertManager.assertAll(SoftAssertManager.java:103)
+	at com.framework.stepdefinitions.Hooks.tearDown(Hooks.java:31)
+
