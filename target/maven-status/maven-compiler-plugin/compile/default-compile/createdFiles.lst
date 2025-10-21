@@ -1,6 +1,0 @@
-com\framework\pages\LoginPage.class
-com\framework\pages\DashboardPage.class
-com\framework\base\PlaywrightDriver.class
-com\framework\utils\ConfigReader.class
-com\framework\pages\HomePage.class
-com\framework\utils\SoftAssertManager.class

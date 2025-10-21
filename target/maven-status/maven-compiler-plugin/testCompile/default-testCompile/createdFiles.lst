@@ -1,5 +1,0 @@
-com\framework\stepdefinitions\Hooks.class
-com\framework\stepdefinitions\LoginSteps.class
-com\framework\stepdefinitions\DashboardSteps.class
-com\framework\runners\TestRunner.class
-com\framework\stepdefinitions\HomeSteps.class

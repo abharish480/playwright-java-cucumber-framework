@@ -9,9 +9,9 @@
 /logs/
 
 # Ignore build outputs
-/target/
+target/
 *.class
-/test-output/
+test-output/
 
 # Ignore logs
 *.log

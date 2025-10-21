@@ -15,6 +15,7 @@ public class Hooks {
     @Before
     public void setUp() {
         PlaywrightDriver.initDriver(System.getProperty("browser", "chromium"));
+        //PlaywrightDriver.getPage().setViewportSize(1920, 1080);
         PlaywrightDriver.getPage().navigate(System.getProperty("url", ConfigReader.get("url")));
         System.out.println("Thread ID: " + Thread.currentThread().threadId());
         SoftAssertManager.initSoftAssert();
