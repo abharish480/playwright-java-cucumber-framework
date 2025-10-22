@@ -20,35 +20,32 @@ import io.cucumber.testng.CucumberOptions;
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
-    @Override
-    @DataProvider(parallel = true)
-    public Object[][] scenarios() {
-        return super.scenarios();
-    }
-    static {
+	@Override
+	@DataProvider(parallel = true)
+	public Object[][] scenarios() {
+		return super.scenarios();
+	}
+
+	static {
 //        String tags = System.getProperty("tags", "@smoke2"); // fallback if not passed
 //        System.setProperty("cucumber.filter.tags", tags);
 //        String threads = System.getProperty("threads", "2");
 //        System.setProperty("dataproviderthreadcount", threads);
-//
-//        System.out.println(">>> Running with tags: " + System.getProperty("cucumber.filter.tags"));
-//        System.out.println(">>> Threads count: " + threads);
-    	
-    	String tags = ConfigReader.get("tags");
-        String threads = ConfigReader.get("threads");
-        String browser = ConfigReader.get("browser");
-        String env = ConfigReader.get("env");
 
-        System.setProperty("cucumber.filter.tags", tags);
-        System.setProperty("dataproviderthreadcount", threads);
-        System.setProperty("browser", browser);
-        System.setProperty("env", env);
+		String tags = ConfigReader.get("tags");
+		String threads = ConfigReader.get("threads");
+		String browser = ConfigReader.get("browser");
+		String env = ConfigReader.get("env");
 
-        System.out.println(">>> Running with tags: " + tags);
-        System.out.println(">>> Threads: " + threads);
-        System.out.println(">>> Browser: " + browser);
-        System.out.println(">>> Env: " + env);
+		System.setProperty("cucumber.filter.tags", tags);
+		System.setProperty("dataproviderthreadcount", threads);
+		System.setProperty("browser", browser);
+		System.setProperty("env", env);
 
+		System.out.println(">>> Running with tags: " + tags);
+		System.out.println(">>> Threads: " + threads);
+		System.out.println(">>> Browser: " + browser);
+		System.out.println(">>> Env: " + env);
 
-    }
+	}
 }

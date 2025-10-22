@@ -1,7 +1,8 @@
 package com.framework.pages;
 
-import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Locator;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.LoadState;
 
 import lombok.Getter;
 
@@ -15,12 +16,17 @@ public class DashboardPage {
 	private final Locator leftMenuItems;
 	private final Locator dropdownMenu;
 	private final Locator dropdownMenuList;
+	private final Locator helpIcon;
+	private final Locator helpSearchBar;
 
 	// Locator strings as constants
 	private static final String DASHBOARD_TITLE = "//h6[contains(@class,'oxd-topbar-header')]";
 	private static final String LEFT_MENU_ITEMS = ".oxd-main-menu li a span";
 	private static final String DROPDOWN_MENU = ".oxd-userdropdown-tab i";
 	private static final String DROPDOWN_LIST = ".oxd-dropdown-menu li a";
+	private static final String LEFT_MENU_ITEM = "//span[contains(@class,'oxd-main-menu-item--name') and text()='%s']";
+	private static final String HELP_ICON = "[title='Help']";
+	private final String HELP_SEARCH_BAR = "#query";
 
 	public DashboardPage(Page page) {
 		this.page = page;
@@ -28,6 +34,12 @@ public class DashboardPage {
 		this.leftMenuItems = page.locator(LEFT_MENU_ITEMS);
 		this.dropdownMenu = page.locator(DROPDOWN_MENU);
 		this.dropdownMenuList = page.locator(DROPDOWN_LIST);
+		this.helpIcon = page.locator(HELP_ICON);
+		this.helpSearchBar = page.locator(HELP_SEARCH_BAR);
 	}
 
+	public void clickLeftMenuItem(String item) {
+		page.locator(String.format(LEFT_MENU_ITEM, item)).click();
+		page.waitForLoadState(LoadState.LOAD);
+	}
 }

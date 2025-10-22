@@ -11,22 +11,6 @@ public class PlaywrightDriver {
 	private static ThreadLocal<Browser> browser = new ThreadLocal<>();
 	private static ThreadLocal<Page> page = new ThreadLocal<>();
 
-	/*
-	 * public static void initDriver(String browserName) {
-	 * playwright.set(Playwright.create());
-	 * System.out.println("Running in : >> "+browserName); switch
-	 * (browserName.toLowerCase()) { case "firefox":
-	 * browser.set(playwright.get().firefox().launch(new
-	 * BrowserType.LaunchOptions().setHeadless(false))); break; case "webkit":
-	 * browser.set(playwright.get().webkit().launch(new
-	 * BrowserType.LaunchOptions().setHeadless(false))); break; case "chrome":
-	 * browser.set(playwright.get().chromium().launch(new
-	 * LaunchOptions().setChannel("chrome").setHeadless(false))); break; default:
-	 * browser.set(playwright.get().chromium().launch(new
-	 * BrowserType.LaunchOptions().setHeadless(false))); break; }
-	 * page.set(browser.get().newPage()); }
-	 */
-
 	public static void initDriver(String browserName) {
 		playwright.set(Playwright.create());
 		System.out.println("Running in : >> " + browserName);

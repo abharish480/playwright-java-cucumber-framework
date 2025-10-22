@@ -7,11 +7,13 @@ import java.util.List;
 
 import com.framework.base.PlaywrightDriver;
 import com.framework.pages.DashboardPage;
+import com.framework.utils.WebActions;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.LoadState;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class DashboardSteps {
 
@@ -62,6 +64,32 @@ public class DashboardSteps {
 		dashboardPage.getDropdownMenu().click();
 		List<String> actualMenuItems = dashboardPage.getDropdownMenuList().allInnerTexts();
 		assertEquals(actualMenuItems, expectedItems, "Dropdown menu items do not match expected values!");
+	}
+
+	@When("User clicks on {string} button in sidepanel")
+	public void userClicksOnButtonInSidepanel(String buttonName) {
+		dashboardPage.clickLeftMenuItem(buttonName);
+	}
+
+	@Then("User clicks on Help Icon and navigates to new tab")
+	public void userNavigatesToNewTab() {
+		Page newTab = page.context().waitForPage(() -> {
+			dashboardPage.getHelpIcon().click(); // adjust locator
+		});
+		newTab.waitForLoadState();
+		String newTabUrl = newTab.url();
+		System.out.println("New tab URL: " + newTabUrl);
+
+		String heading = newTab.locator("h1").first().textContent().trim();
+		System.out.println("Heading in new tab: " + heading);
+
+		assertTrue(newTabUrl.contains("starterhelp"), "URL should contain 'help'");
+		dashboardPage = new DashboardPage(newTab);
+		WebActions.waitForElementVisible(newTab, dashboardPage.getHELP_SEARCH_BAR(), 20);
+		assertTrue(dashboardPage.getHelpSearchBar().isVisible(), "Search bar is not present in help page");
+		newTab.close();
+		dashboardPage = new DashboardPage(PlaywrightDriver.getPage());
+		assertTrue(dashboardPage.getDashboardTitle().isVisible(), "Dashboard page is not visible");
 	}
 
 }
