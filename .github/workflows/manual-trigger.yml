@@ -48,11 +48,26 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      # Step 4: Clean old Allure directories
+      # Step 4: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Step 5: Start Xvfb (for GUI/browser display)
+      - name: Start Xvfb
+        run: |
+          nohup Xvfb :99 -screen 0 1920x1080x24 >/dev/null 2>&1 &
+          echo "DISPLAY=:99" >> $GITHUB_ENV
+
+      # Step 6: Clean Allure directories
       - name: Clean Allure directories
         run: rm -rf allure-results || true
 
-      # Step 5: Run Maven tests
+      # Step 7: Run Maven tests
       - name: Run Tests
         run: |
           mvn clean test \
@@ -61,7 +76,7 @@ jobs:
             -Dtags="${{ inputs.tags }}" \
             -Dthreads=${{ inputs.threads }} || true
 
-      # Step 6: Upload raw Allure results
+      # Step 8: Upload raw Allure results
       - name: Upload Allure Results
         if: always()
         uses: actions/upload-artifact@v4
@@ -69,28 +84,28 @@ jobs:
           name: allure-results
           path: allure-results
 
-      # Step 7: Install Allure CLI
+      # Step 9: Install Allure CLI
       - name: Install Allure CLI
         run: |
           wget https://github.com/allure-framework/allure2/releases/download/2.29.0/allure-2.29.0.zip
           unzip allure-2.29.0.zip -d /opt/
           echo "/opt/allure-2.29.0/bin" >> $GITHUB_PATH
 
-      # Step 8: Generate Allure Report in timestamped folder
+      # Step 10: Generate Allure Report
       - name: Generate Allure Report
         if: always()
         run: |
           mkdir -p target/allure-report-${{ steps.timestamp.outputs.timestamp }}
-          allure generate target/allure-results \
+          allure generate allure-results \
             -o target/allure-report-${{ steps.timestamp.outputs.timestamp }} --clean
 
-      # Step 9: Create redirect index.html for root
+      # Step 11: Create redirect index.html
       - name: Create redirect index.html
         run: |
           mkdir -p target/allure-redirect
           echo "<meta http-equiv='refresh' content='0; url=${{ steps.timestamp.outputs.timestamp }}/'>" > target/allure-redirect/index.html
 
-      # Step 10: Deploy timestamped report
+      # Step 12: Deploy timestamped report
       - name: Deploy timestamped report
         uses: peaceiris/actions-gh-pages@v4
         with:
@@ -99,7 +114,7 @@ jobs:
           destination_dir: ${{ steps.timestamp.outputs.timestamp }}
           keep_files: true
 
-      # Step 11: Deploy redirect to root
+      # Step 13: Deploy redirect to root
       - name: Deploy redirect to root
         uses: peaceiris/actions-gh-pages@v4
         with:
@@ -108,7 +123,7 @@ jobs:
           destination_dir: .
           keep_files: true
 
-      # Step 12: Add link to workflow summary
+      # Step 14: Add report link to workflow summary
       - name: Add Report Link to Summary
         if: always()
         run: echo "🔗 [View Allure Report](https://abharish480.github.io/playwright-java-cucumber-framework/${{ steps.timestamp.outputs.timestamp }}/)" >> $GITHUB_STEP_SUMMARY
