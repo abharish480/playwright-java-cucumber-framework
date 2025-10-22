@@ -4,18 +4,28 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import com.framework.base.PlaywrightDriver;
+import com.framework.utils.AllureEnvironmentWriter;
 import com.framework.utils.ConfigReader;
 import com.framework.utils.SoftAssertManager;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.Scenario;
 
 public class Hooks {
+	
+	@BeforeAll
+    public static void beforeAll() {
+        AllureEnvironmentWriter.writeEnvDetails();
+    }
+
+	
 	@Before
 	public void setUp() {
 		PlaywrightDriver.initDriver(System.getProperty("browser", "chromium"));
 		PlaywrightDriver.getPage().navigate(System.getProperty("url", ConfigReader.get("url")));
+		//AllureEnvironmentWriter.writeEnvDetails();
 		//System.out.println("Thread ID: " + Thread.currentThread().threadId());
 		SoftAssertManager.initSoftAssert();
 	}

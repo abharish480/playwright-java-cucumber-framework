@@ -1,5 +1,6 @@
 package com.framework.base;
 
+import com.framework.utils.ConfigReader;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
@@ -14,21 +15,22 @@ public class PlaywrightDriver {
 	public static void initDriver(String browserName) {
 		playwright.set(Playwright.create());
 		System.out.println("Running in : >> " + browserName);
-
+		boolean isHeadless = Boolean.parseBoolean(ConfigReader.get("headless"));
+		System.out.println(">>> Headless mode: " + isHeadless);
 		Browser launchedBrowser;
 		switch (browserName.toLowerCase()) {
 		case "firefox":
-			launchedBrowser = playwright.get().firefox().launch(new BrowserType.LaunchOptions().setHeadless(false));
+			launchedBrowser = playwright.get().firefox().launch(new BrowserType.LaunchOptions().setHeadless(isHeadless));
 			break;
 		case "webkit":
-			launchedBrowser = playwright.get().webkit().launch(new BrowserType.LaunchOptions().setHeadless(false));
+			launchedBrowser = playwright.get().webkit().launch(new BrowserType.LaunchOptions().setHeadless(isHeadless));
 			break;
 		case "chrome":
 			launchedBrowser = playwright.get().chromium()
-					.launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(false));
+					.launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(isHeadless));
 			break;
 		default:
-			launchedBrowser = playwright.get().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+			launchedBrowser = playwright.get().chromium().launch(new BrowserType.LaunchOptions().setHeadless(isHeadless));
 			break;
 		}
 
