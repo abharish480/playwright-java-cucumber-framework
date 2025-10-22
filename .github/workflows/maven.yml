@@ -1,0 +1,114 @@
+name: Manual Test Run with Allure
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch to run workflow from"
+        required: true
+        default: "main"
+      environment:
+        description: "Target environment"
+        required: true
+        default: "QA"
+      browser:
+        description: "Browser to use"
+        required: true
+        default: "chrome"
+      tags:
+        description: "Cucumber/TestNG tags"
+        required: false
+        default: "@regression"
+      suite:
+        description: "No of Threads"
+        required: false
+        default: "3"
+
+jobs:
+  manual-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Generate timestamp
+      - name: Generate timestamp
+        id: timestamp
+        run: echo "timestamp=$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_OUTPUT
+
+      # Step 2: Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.branch }}
+
+      # Step 3: Set up JDK
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      # Step 4: Clean old Allure directories
+      - name: Clean Allure directories
+        run: rm -rf allure-results || true
+
+      # Step 5: Run Maven tests
+      - name: Run Tests
+        run: |
+          mvn clean test \
+            -Denv=${{ inputs.environment }} \
+            -Dbrowser=${{ inputs.browser }} \
+            -Dtags="${{ inputs.tags }}" \
+            -Dthreads=${{ inputs.threads }} || true
+
+      # Step 6: Upload raw Allure results
+      - name: Upload Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results
+
+      # Step 7: Install Allure CLI
+      - name: Install Allure CLI
+        run: |
+          wget https://github.com/allure-framework/allure2/releases/download/2.29.0/allure-2.29.0.zip
+          unzip allure-2.29.0.zip -d /opt/
+          echo "/opt/allure-2.29.0/bin" >> $GITHUB_PATH
+
+      # Step 8: Generate Allure Report in timestamped folder
+      - name: Generate Allure Report
+        if: always()
+        run: |
+          mkdir -p target/allure-report-${{ steps.timestamp.outputs.timestamp }}
+          allure generate target/allure-results \
+            -o target/allure-report-${{ steps.timestamp.outputs.timestamp }} --clean
+
+      # Step 9: Create redirect index.html for root
+      - name: Create redirect index.html
+        run: |
+          mkdir -p target/allure-redirect
+          echo "<meta http-equiv='refresh' content='0; url=${{ steps.timestamp.outputs.timestamp }}/'>" > target/allure-redirect/index.html
+
+      # Step 10: Deploy timestamped report
+      - name: Deploy timestamped report
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: target/allure-report-${{ steps.timestamp.outputs.timestamp }}
+          destination_dir: ${{ steps.timestamp.outputs.timestamp }}
+          keep_files: true
+
+      # Step 11: Deploy redirect to root
+      - name: Deploy redirect to root
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: target/allure-redirect
+          destination_dir: .
+          keep_files: true
+
+      # Step 12: Add link to workflow summary
+      - name: Add Report Link to Summary
+        if: always()
+        run: echo "🔗 [View Allure Report](https://abharish480.github.io/playwright-java-cucumber-framework/${{ steps.timestamp.outputs.timestamp }}/)" >> $GITHUB_STEP_SUMMARY
