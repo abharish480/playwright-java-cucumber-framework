@@ -1,0 +1,1 @@
+[{"values":["true"],"name":"headless"},{"values":["chrome"],"name":"browser"},{"values":["3"],"name":"threads"},{"values":["QA"],"name":"env"},{"values":["@smoke"],"name":"tags"}]
