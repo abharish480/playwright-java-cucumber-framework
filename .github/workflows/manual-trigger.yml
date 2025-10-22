@@ -87,22 +87,22 @@ jobs:
       - name: Generate Allure Report
         if: always()
         run: |
-          mkdir -p target/allure-report-${{ steps.timestamp.outputs.timestamp }}
+          mkdir -p allure-report-${{ steps.timestamp.outputs.timestamp }}
           allure generate allure-results \
-            -o target/allure-report-${{ steps.timestamp.outputs.timestamp }} --clean
+            -o allure-report-${{ steps.timestamp.outputs.timestamp }} --clean
 
       # Step 11: Create redirect index.html
       - name: Create redirect index.html
         run: |
-          mkdir -p target/allure-redirect
-          echo "<meta http-equiv='refresh' content='0; url=${{ steps.timestamp.outputs.timestamp }}/'>" > target/allure-redirect/index.html
+          mkdir -p allure-redirect
+          echo "<meta http-equiv='refresh' content='0; url=${{ steps.timestamp.outputs.timestamp }}/'>" > allure-redirect/index.html
 
       # Step 12: Deploy timestamped report
       - name: Deploy timestamped report
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: target/allure-report-${{ steps.timestamp.outputs.timestamp }}
+          publish_dir: allure-report-${{ steps.timestamp.outputs.timestamp }}
           destination_dir: ${{ steps.timestamp.outputs.timestamp }}
           keep_files: true
 
@@ -111,7 +111,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: target/allure-redirect
+          publish_dir: allure-redirect
           destination_dir: .
           keep_files: true
 
