@@ -19,7 +19,7 @@ on:
         description: "Cucumber/TestNG tags"
         required: false
         default: "@regression"
-      suite:
+      threads:
         description: "No of Threads"
         required: false
         default: "3"
