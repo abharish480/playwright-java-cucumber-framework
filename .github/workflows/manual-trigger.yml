@@ -91,34 +91,44 @@ jobs:
           allure generate allure-results \
             -o allure-report-${{ steps.timestamp.outputs.timestamp }} --clean
 
-      # Step 10: Create redirect to latest report
+            # Step 10: Generate Allure Report (inside target folder)
+      - name: Generate Allure Report
+        if: always()
+        run: |
+          mkdir -p target/allure-report-${{ steps.timestamp.outputs.timestamp }}
+          allure generate allure-results \
+            -o target/allure-report-${{ steps.timestamp.outputs.timestamp }} --clean
+
+      # Step 11: Create redirect index.html
       - name: Create redirect index.html
         run: |
-          mkdir -p allure-redirect
-          echo "<meta http-equiv='refresh' content='0; url=${{ steps.timestamp.outputs.timestamp }}/index.html'>" > allure-redirect/index.html
+          mkdir -p target/allure-redirect
+          echo "<meta http-equiv='refresh' content='0; url=${{ steps.timestamp.outputs.timestamp }}/index.html'>" > target/allure-redirect/index.html
 
-      # Step 11: Deploy timestamped report to gh-pages
+      # Step 12: Deploy timestamped report
       - name: Deploy timestamped report
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: allure-report-${{ steps.timestamp.outputs.timestamp }}
+          publish_dir: target/allure-report-${{ steps.timestamp.outputs.timestamp }}
           destination_dir: ${{ steps.timestamp.outputs.timestamp }}
           keep_files: true
 
-      # Step 12: Deploy redirect to root
+      # Step 13: Deploy redirect to root
       - name: Deploy redirect to root
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: allure-redirect
+          publish_dir: target/allure-redirect
           destination_dir: .
           keep_files: true
 
-      # Step 13: Add report link to workflow summary
+      # Step 14: Add Report Link to Summary
       - name: Add Report Link to Summary
         if: always()
         run: |
-          echo "✅ Test execution completed!" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Allure Report Published Successfully!" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "🔗 [View Latest Allure Report](https://abharish480.github.io/playwright-java-cucumber-framework/)" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 [View Report for This Run](https://abharish480.github.io/playwright-java-cucumber-framework/${{ steps.timestamp.outputs.timestamp }}/index.html)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🌐 [Latest Report Redirect (always shows newest)](https://abharish480.github.io/playwright-java-cucumber-framework/)" >> $GITHUB_STEP_SUMMARY
