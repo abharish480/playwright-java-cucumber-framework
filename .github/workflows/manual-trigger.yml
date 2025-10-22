@@ -48,15 +48,6 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      # Step 4: Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm ci
-
       # Step 5: Start Xvfb (for GUI/browser display)
       - name: Start Xvfb
         run: |
@@ -70,6 +61,7 @@ jobs:
       # Step 7: Run Maven tests
       - name: Run Tests
         run: |
+          xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" \
           mvn clean test \
             -Denv=${{ inputs.environment }} \
             -Dbrowser=${{ inputs.browser }} \
