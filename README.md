@@ -2,7 +2,7 @@
 
 # 🚀 Playwright Java Cucumber Framework  
 
-[![Build Status](https://github.com/abharish480/playwright-java-cucumber-framework/actions/workflows/maven.yml/badge.svg)](https://github.com/abharish480/playwright-java-cucumber-framework/actions)  
+[![Build Status](https://github.com/abharish480/playwright-java-cucumber-framework/actions/workflows/maven.yml/badge.svg)](https://github.com/abharish480/playwright-java-cucumber-framework/actions)
 [![Allure Report](https://img.shields.io/badge/Allure-Report-ff69b4)](https://abharish480.github.io/playwright-java-cucumber-framework/)  
 ![Playwright](https://img.shields.io/badge/Playwright-Automation-brightgreen)  
 ![Java](https://img.shields.io/badge/Java-17-blue)  
