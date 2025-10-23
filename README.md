@@ -1,21 +1,17 @@
-# playwright-java-cucumber-framework
-Playwright, Java, Page object model, ThreadLocal, TestNg runner, Allure reports, Maven, Github actions, Json data reading, config reader, Soft assertion utility
-
-Perfect — let’s add a **badges section** at the top of your README so it looks polished and professional. These badges give quick visual cues about build status, reports, license, and more.
-
-Here’s the updated **README.md** with badges included:
-
 ---
 
 # 🚀 Playwright Java Cucumber Framework  
 
 [![Build Status](https://github.com/abharish480/playwright-java-cucumber-framework/actions/workflows/maven.yml/badge.svg)](https://github.com/abharish480/playwright-java-cucumber-framework/actions)  
 [![Allure Report](https://img.shields.io/badge/Allure-Report-ff69b4)](https://abharish480.github.io/playwright-java-cucumber-framework/)  
+![Playwright](https://img.shields.io/badge/Playwright-Automation-brightgreen)  
 ![Java](https://img.shields.io/badge/Java-17-blue)  
 ![Maven](https://img.shields.io/badge/Maven-Build-orange)  
+![Cucumber](https://img.shields.io/badge/Cucumber-BDD-green)  
+![TestNG](https://img.shields.io/badge/TestNG-Runner-lightgrey)  
 ![License](https://img.shields.io/badge/License-MIT-green)  
 
-A modern **UI automation framework** built with **Playwright** and **Java**, designed for scalability, maintainability, and CI/CD integration.  
+A modern **UI automation framework** built with **Playwright**, **Java**, **Cucumber**, and **Maven**, designed for scalability, maintainability, and CI/CD integration.  
 This framework follows the **Page Object Model (POM)** pattern, supports **parallel execution** with `ThreadLocal`, integrates with **Allure Reports**, and runs seamlessly on **GitHub Actions**.
 
 ---
@@ -23,14 +19,16 @@ This framework follows the **Page Object Model (POM)** pattern, supports **paral
 ## ✨ Features
 
 - 🎭 **Playwright (Java)** – Fast, reliable browser automation across Chromium, Firefox, and WebKit.  
+- 🥒 **Cucumber (BDD)** – Behavior‑Driven Development with Gherkin syntax for human‑readable test scenarios.  
 - 🏗 **Page Object Model (POM)** – Clean separation of test logic and UI interactions.  
 - 🧵 **ThreadLocal Driver Management** – Safe parallel execution without session conflicts.  
 - 🧪 **TestNG Runner** – Flexible test execution, grouping, and parallelism.  
 - 📊 **Allure Reports** – Rich, interactive test reports with screenshots, environment info, and CI metadata.  
 - ⚙️ **Config Reader** – Centralized configuration via `config.properties` and Maven `-D` overrides.  
-- 📂 **JSON Data Reader** – Externalized test data for data-driven testing.  
+- 📂 **JSON Data Reader** – Externalized test data for data‑driven testing.  
 - 🧷 **Soft Assertions Utility** – Collect multiple assertion results in a single test run.  
 - ☁️ **GitHub Actions CI/CD** – Automated test execution and report publishing.  
+- 📦 **Maven Build Tool** – Dependency management, build lifecycle, and integration with CI/CD pipelines.  
 
 ---
 
@@ -67,7 +65,7 @@ src
   ```
 - Override at runtime with Maven:
   ```bash
-  mvn clean test -Dbrowser=firefox -Dheadless=false -Denv=staging
+  mvn clean test -Dbrowser=firefox -Dheadless=false -Denv=staging -Dthreads=2 -Dtags=@regression
   ```
 
 ---
@@ -90,7 +88,7 @@ src
 
 - Generate report locally:
   ```bash
-  allure serve allure-results
+  allure serve
   ```
 - In CI, reports are published to **GitHub Pages** with:
   - ✅ Screenshots on failure  
@@ -164,7 +162,3 @@ src
    allure serve allure-results
    ```
 ```
-
-This gives contributors a straight path: **clone → install → configure → run → report**.
-
-
