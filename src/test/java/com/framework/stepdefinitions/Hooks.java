@@ -25,8 +25,6 @@ public class Hooks {
 	public void setUp() {
 		PlaywrightDriver.initDriver(System.getProperty("browser", "chromium"));
 		PlaywrightDriver.getPage().navigate(System.getProperty("url", ConfigReader.get("url")));
-		//AllureEnvironmentWriter.writeEnvDetails();
-		//System.out.println("Thread ID: " + Thread.currentThread().threadId());
 		SoftAssertManager.initSoftAssert();
 	}
 
