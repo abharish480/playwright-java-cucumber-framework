@@ -2,6 +2,7 @@ package com.framework.stepdefinitions;
 
 import static com.framework.utils.SoftAssertManager.assertEquals;
 import static com.framework.utils.SoftAssertManager.assertTrue;
+import static com.framework.utils.Constants.*;
 
 import java.util.List;
 
@@ -31,6 +32,7 @@ public class DashboardSteps {
 		page.waitForLoadState(LoadState.LOAD);
 		page.waitForLoadState(LoadState.NETWORKIDLE);
 		assertTrue(dashboardPage.getDashboardTitle().isVisible(), "Dashboard page is not visible");
+		assertEquals(dashboardPage.getDashboardTitle().textContent(), DASHBOARD_TITLE, "Title is not matching");
 	}
 
 	@Then("User validates the below menu is displayed in left side panel")

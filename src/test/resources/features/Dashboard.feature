@@ -30,7 +30,7 @@ Feature: Dashboard Page OrangeHRM
       | Change Password |
       | Logout          |
 
-  @smoke @harish
+  @smoke 
   Scenario: Verify help icon on dashboard page
     Given User launches the application
     When User login with username as "Admin" and password as "admin123"
